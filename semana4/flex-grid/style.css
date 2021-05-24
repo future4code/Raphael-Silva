@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding:0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    height: 70px;
+    background-color: mediumvioletred;  
+    display: flex;  
+    padding: 7px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #f2d0e0;
+        
+}
+
+footer {
+    height: 50px;
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
