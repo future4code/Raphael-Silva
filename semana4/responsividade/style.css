@@ -38,6 +38,10 @@ footer {
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
 /*celulares*/    
+    main {
+       height: 100%;
+}
+
 }
 @media screen and (min-device-width: 1200px) {
 /*computadores*/    
