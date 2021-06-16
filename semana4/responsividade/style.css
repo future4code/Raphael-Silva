@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+header {
+    background-color: orangered;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.thumbnail {
+    width: 300px;
+    display: grid 4fr;
+    margin: 16px 2px 0px 12px;
+    
+    
+}
+
+main {
+    height: 100vh;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+
+}
+
+
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/*celulares*/    
+    main {
+       height: 100%;
+}
+
+}
+@media screen and (min-device-width: 1200px) {
+/*computadores*/    
+}
