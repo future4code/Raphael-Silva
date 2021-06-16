@@ -1,0 +1,19 @@
+h1 {
+    color: green;
+    background-color: greenyellow;
+}
+
+p {
+    color: black    ;
+    background-color: greenyellow;
+}
+
+a {
+    color:yellow;
+    background-color: teal;
+}
+
+h2 {
+    color:red;
+    background-color: black;
+}
