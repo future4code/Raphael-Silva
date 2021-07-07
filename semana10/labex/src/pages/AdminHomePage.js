@@ -5,7 +5,7 @@ export const AdminHomePage = () => {
     const history = useHistory()
 
     const goToTripDetailsPage = () => {
-        history.push("/admin/trips/list")
+        history.push("/admin/trips/create")
     }
 
     const goBack = () => {
@@ -15,7 +15,7 @@ export const AdminHomePage = () => {
     return (
         <div>
             <p>AdminHomePage</p>
-            <button onClick={goToTripDetailsPage}></button>
+            <button onClick={goToTripDetailsPage}>Detalhes</button>
             <button onClick={goBack}>Voltar</button>
         </div>
     )

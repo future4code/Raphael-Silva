@@ -1,9 +1,45 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
+import axios from "axios";
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
+const useProtectedPage = () => {
+    const history = useHistory();
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+
+        if (token === null) {
+            console.log("Não está logado!!!");
+            history.push("/login");
+        }
+    }, []);
+};
 
 export const TripDetailsPage = () => {
+    useProtectedPage();
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        axios
+            .get(
+                "https://us-central1-labenu-apis.cloudfunctions.net/labeX/raphael-nicolini-molina/trip/3bUbdB1gvPzWrThpazVC",
+                {
+                    headers: {
+                        auth: token
+                    }
+                }
+            )
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.log("Deu erro: ", error.response);
+            });
+    }, []);
+
     const history = useHistory()
-    
+
     const goBack = () => {
         history.goBack()
     }
