@@ -2,19 +2,7 @@ import React from "react"
 import axios from "axios";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
-const useProtectedPage = () => {
-    const history = useHistory();
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-
-        if (token === null) {
-            console.log("Não está logado!!!");
-            history.push("/login");
-        }
-    }, []);
-};
+import { useProtectedPage } from "../hooks/useProtectedPage";
 
 export const TripDetailsPage = () => {
     useProtectedPage();
@@ -23,7 +11,7 @@ export const TripDetailsPage = () => {
         const token = localStorage.getItem("token");
         axios
             .get(
-                "https://us-central1-labenu-apis.cloudfunctions.net/labeX/raphael-nicolini-molina/trip/3bUbdB1gvPzWrThpazVC",
+                "https://us-central1-labenu-apis.cloudfunctions.net/labeX/raphael-nicolini-molina/trips",
                 {
                     headers: {
                         auth: token
