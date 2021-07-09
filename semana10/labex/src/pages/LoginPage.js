@@ -17,8 +17,8 @@ export const LoginPage = () => {
         setPassword(event.target.value);
     };
 
-    const onSubmitLogin = () => {
-        console.log(email, password);
+    const onSubmitLogin = (event) => {
+        event.preventDefault()
         const body = {
             email: email,
             password: password
@@ -48,20 +48,24 @@ export const LoginPage = () => {
     return (
         <div>
             <p>LoginPage</p>
-            <input
+            <form onSubmit={onSubmitLogin}>
+            <input 
                 placeholder="email"
                 type="email"
                 value={email}
                 onChange={onChangeEmail}
+                required
             />
             <input
                 placeholder="password"
                 type="password"
                 value={password}
                 onChange={onChangePassword}
+                required
             />
 
-            <button onClick={onSubmitLogin}>Enviar</button>
+            <button>Enviar</button>
+            </form>
             <button onClick={goBack}>Voltar</button>
         </div>
     )

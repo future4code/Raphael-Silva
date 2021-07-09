@@ -1,5 +1,5 @@
 import { AdminHomePage } from "../pages/AdminHomePage"
-import { ApplicationFormPage } from "../pages/ApplicationFormPage"
+import { ApplicationFormPage } from "../pages/applicationFormPage/ApplicationFormPage"
 import { CreateTripPage } from "../pages/CreateTripPage"
 import { HomePage } from "../pages/HomePage"
 import { ListTripsPage } from "../pages/listTripsPage/ListTripsPage"
