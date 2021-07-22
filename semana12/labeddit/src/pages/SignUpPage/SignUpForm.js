@@ -1,22 +1,24 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import {InputsContainer, SignUpFormContainer} from './styled'
-import {useHistory} from 'react-router-dom'
+import { InputsContainer, SignUpFormContainer } from './styled'
+import { useHistory } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
+import {signUp} from '../../services/users'
 
-const SignUpForm  = () => {
+const SignUpForm = ({setRightButtonText}) => {
     const history = useHistory()
     const [form, onChange, clear] = useForm({ name: '', email: '', password: '' })
 
     const onSubmitForm = (event) => {
         event.preventDefault()
+        signUp(form, clear, history, setRightButtonText)
     }
 
     return (
-        <form onSubmit={onSubmitForm}>
-            <SignUpFormContainer>
-                <InputsContainer>
+        <InputsContainer>
+            <form onSubmit={onSubmitForm}>
+                <SignUpFormContainer>
                     <TextField
                         name={'name'}
                         value={form.name}
@@ -50,18 +52,19 @@ const SignUpForm  = () => {
                         required
                         type={'password'}
                     />
-                </InputsContainer>
-                <Button
-                    type={'submit'}
-                    fullWidth
-                    variant={'contained'}
-                    color={'primary'}
-                >
+                    <Button
+                        type={'submit'}
+                        fullWidth
+                        variant={'contained'}
+                        color={'primary'}
+                    >
 
-                    Fazer Cadastro
-                </Button>
-            </SignUpFormContainer>
-        </form>
+                        Fazer Cadastro
+                    </Button>
+                </SignUpFormContainer>
+                
+            </form>
+        </InputsContainer>
     )
 }
 

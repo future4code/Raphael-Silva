@@ -8,11 +8,22 @@ export const ScreenContainer = styled.div`
   margin-top: 8vh;
 `
 
-
 export const SignUpFormContainer = styled.div` 
+display: flex;
+flex-direction: column;
+width: 80vw;
+max-width: 450px;
+align-items: center;
+margin-bottom: 20px;
 `
 
 export const InputsContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 80vw;
+max-width: 450px;
+align-items: center;
+margin-bottom: 20px;
 `
 
 export const LogoImage = styled.img`
