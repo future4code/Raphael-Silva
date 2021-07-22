@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom'
 
 const LoginForm = ({setRightButtonText}) => {
     const [form, onChange, clear] = useForm({ email: "", password: "" })
-    const history = useHistory
+    const history = useHistory()
 
     const onSubmitForm = (event) => {
         event.preventDefault()

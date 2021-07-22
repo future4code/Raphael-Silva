@@ -8,7 +8,7 @@ import {signUp} from '../../services/users'
 
 const SignUpForm = ({setRightButtonText}) => {
     const history = useHistory()
-    const [form, onChange, clear] = useForm({ name: '', email: '', password: '' })
+    const [form, onChange, clear] = useForm({ username: '', email: '', password: '' })
 
     const onSubmitForm = (event) => {
         event.preventDefault()
@@ -20,8 +20,8 @@ const SignUpForm = ({setRightButtonText}) => {
             <form onSubmit={onSubmitForm}>
                 <SignUpFormContainer>
                     <TextField
-                        name={'name'}
-                        value={form.name}
+                        name={'username'}
+                        value={form.username}
                         onChange={onChange}
                         label={'Nome'}
                         variant={'outlined'}
